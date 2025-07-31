@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Cookies - Moksha Cookies</title>
+    <link rel="stylesheet" href="styles-optimized.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Moksha Cookies</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classics.html" class="active">Classics</a></li>
+                <li><a href="outlandish.html">Outlandish</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Classic Cookies</h1>
+            <p>Timeless favorites that never go out of style</p>
+        </section>
+
+        <section class="cookie-grid">
+            <div class="cookie-panel" data-cookie-id="classic-chocolate-chip">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/8B4513/FFFFFF?text=Chocolate+Chip" alt="Chocolate Chip Cookie">
+                    <div class="price-tag">$2.50</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Classic Chocolate Chip</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('classic-chocolate-chip')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="oatmeal-raisin">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/D2691E/FFFFFF?text=Oatmeal+Raisin" alt="Oatmeal Raisin Cookie">
+                    <div class="price-tag">$2.25</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Oatmeal Raisin</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('oatmeal-raisin')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="sugar-cookie">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/F5DEB3/000000?text=Sugar+Cookie" alt="Sugar Cookie">
+                    <div class="price-tag">$2.00</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Vanilla Sugar Cookie</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('sugar-cookie')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="peanut-butter">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/CD853F/FFFFFF?text=Peanut+Butter" alt="Peanut Butter Cookie">
+                    <div class="price-tag">$2.75</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Peanut Butter Classic</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('peanut-butter')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="snickerdoodle">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/DEB887/000000?text=Snickerdoodle" alt="Snickerdoodle Cookie">
+                    <div class="price-tag">$2.25</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Cinnamon Snickerdoodle</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('snickerdoodle')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="white-chocolate-macadamia">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/F5F5DC/000000?text=White+Chocolate+Macadamia" alt="White Chocolate Macadamia Cookie">
+                    <div class="price-tag">$3.00</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>White Chocolate Macadamia</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('white-chocolate-macadamia')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cookie Detail Modal -->
+    <div id="cookieModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="cookie-detail">
+                <div class="cookie-detail-image">
+                    <img id="modalCookieImage" src="" alt="">
+                </div>
+                <div class="cookie-detail-info">
+                    <h2 id="modalCookieName"></h2>
+                    <p id="modalCookieDescription"></p>
+                    <div class="cookie-price">
+                        <span id="modalCookiePrice"></span>
+                    </div>
+                    <div class="add-to-cart-section">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="20">
+                            <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart()">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Moksha Cookies. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

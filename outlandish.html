@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlandish Cookies - Moksha Cookies</title>
+    <link rel="stylesheet" href="styles-optimized.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Moksha Cookies</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classics.html">Classics</a></li>
+                <li><a href="outlandish.html" class="active">Outlandish</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Outlandish Creations</h1>
+            <p>Bold flavors and unique combinations that push the boundaries</p>
+        </section>
+
+        <section class="cookie-grid">
+            <div class="cookie-panel" data-cookie-id="bacon-maple">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/FF6B6B/FFFFFF?text=Bacon+Maple" alt="Bacon Maple Cookie">
+                    <div class="price-tag">$4.50</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Bacon Maple Delight</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('bacon-maple')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="lavender-lemon">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/E6E6FA/000000?text=Lavender+Lemon" alt="Lavender Lemon Cookie">
+                    <div class="price-tag">$3.75</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Lavender Lemon Zest</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('lavender-lemon')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="sriracha-chocolate">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/DC143C/FFFFFF?text=Sriracha+Chocolate" alt="Sriracha Chocolate Cookie">
+                    <div class="price-tag">$3.50</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Sriracha Chocolate Fire</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('sriracha-chocolate')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="blue-cheese-walnut">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/4682B4/FFFFFF?text=Blue+Cheese+Walnut" alt="Blue Cheese Walnut Cookie">
+                    <div class="price-tag">$4.25</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Blue Cheese Walnut</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('blue-cheese-walnut')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="wasabi-ginger">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/90EE90/000000?text=Wasabi+Ginger" alt="Wasabi Ginger Cookie">
+                    <div class="price-tag">$3.75</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Wasabi Ginger Kick</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('wasabi-ginger')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-panel" data-cookie-id="truffle-sea-salt">
+                <div class="cookie-image">
+                    <img src="https://via.placeholder.com/300x250/2F4F4F/FFFFFF?text=Truffle+Sea+Salt" alt="Truffle Sea Salt Cookie">
+                    <div class="price-tag">$5.00</div>
+                </div>
+                <div class="cookie-info">
+                    <div class="cookie-name">
+                        <h3>Truffle Sea Salt Luxury</h3>
+                    </div>
+                    <div class="cookie-action">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartDirect('truffle-sea-salt')">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cookie Detail Modal -->
+    <div id="cookieModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="cookie-detail">
+                <div class="cookie-detail-image">
+                    <img id="modalCookieImage" src="" alt="">
+                </div>
+                <div class="cookie-detail-info">
+                    <h2 id="modalCookieName"></h2>
+                    <p id="modalCookieDescription"></p>
+                    <div class="cookie-price">
+                        <span id="modalCookiePrice"></span>
+                    </div>
+                    <div class="add-to-cart-section">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="20">
+                            <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart()">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Moksha Cookies. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

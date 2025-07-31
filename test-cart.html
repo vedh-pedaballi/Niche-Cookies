@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Test - Moksha Cookies</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 8px; }
+        button { padding: 10px 15px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Cart Debug Test Page</h1>
+    
+    <div class="test-section">
+        <h3>Current localStorage Contents:</h3>
+        <pre id="localStorageContent">Loading...</pre>
+        <button onclick="showLocalStorage()">Refresh localStorage</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>Add Test Items:</h3>
+        <button onclick="addTestItem1()">Add Chocolate Chip</button>
+        <button onclick="addTestItem2()">Add Bacon Maple</button>
+        <button onclick="clearCart()">Clear Cart</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>Cart Display:</h3>
+        <div id="cartDisplay">No items in cart</div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Navigation:</h3>
+        <a href="classics.html"><button>Go to Classics</button></a>
+        <a href="outlandish.html"><button>Go to Outlandish</button></a>
+        <a href="cart.html"><button>Go to Cart Page</button></a>
+    </div>
+
+    <script>
+        let cart = [];
+        
+        function showLocalStorage() {
+            const content = document.getElementById('localStorageContent');
+            const cartData = localStorage.getItem('mokshaCart');
+            content.textContent = cartData ? cartData : 'No cart data found';
+        }
+        
+        function addTestItem1() {
+            const item = {
+                id: 'classic-chocolate-chip',
+                name: 'Classic Chocolate Chip',
+                price: '$2.50',
+                quantity: 1
+            };
+            addToCart(item);
+        }
+        
+        function addTestItem2() {
+            const item = {
+                id: 'bacon-maple',
+                name: 'Bacon Maple Delight',
+                price: '$4.50',
+                quantity: 2
+            };
+            addToCart(item);
+        }
+        
+        function addToCart(item) {
+            // Check if item already exists
+            const existingItem = cart.find(cartItem => cartItem.id === item.id);
+            if (existingItem) {
+                existingItem.quantity += item.quantity;
+            } else {
+                cart.push(item);
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('mokshaCart', JSON.stringify(cart));
+            
+            // Update display
+            showLocalStorage();
+            displayCart();
+        }
+        
+        function clearCart() {
+            cart = [];
+            localStorage.removeItem('mokshaCart');
+            showLocalStorage();
+            displayCart();
+        }
+        
+        function displayCart() {
+            const display = document.getElementById('cartDisplay');
+            if (cart.length === 0) {
+                display.innerHTML = '<p>No items in cart</p>';
+                return;
+            }
+            
+            let html = '<ul>';
+            cart.forEach(item => {
+                html += `<li>${item.name} - ${item.price} x ${item.quantity}</li>`;
+            });
+            html += '</ul>';
+            display.innerHTML = html;
+        }
+        
+        // Load cart on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedCart = localStorage.getItem('mokshaCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+            }
+            showLocalStorage();
+            displayCart();
+        });
+    </script>
+</body>
+</html> 
